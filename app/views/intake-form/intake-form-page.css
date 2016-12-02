@@ -39,11 +39,31 @@
 }
 
 .big-button {
-    background-color: #42CDF9;
+    background-color: #54C7FC;
     font-size: 52;
     color: white;
     padding: 10px 50px;
     horizontal-align: center;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: #3F4F67;
+    font-family: "Bungee-Regular";
+    font-size: 45px;
 }
 
+/* LABEL INPUT */
+.label-input {
+  margin-top: 20px;
+  border-width: 1px;
+  border-color: none none #3F4F67 none;
+}
 
+/* ATTEMPTS INPUT */
+.attempts-input {
+  margin-top: 40px;
+}
+
+/* START INPUT */
+.start-input {
+  margin-top: 40px;
+}

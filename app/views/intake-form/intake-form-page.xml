@@ -1,9 +1,13 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" xmlns:dd="nativescript-drop-down">
   <StackLayout class="intake-form">
+    
+    <!-- LOGO -->
     <Image src="~/images/sqwak-labs-logo.png" stretch="none" class="sqwak-labs-logo" />
     <Border borderWidth="1" borderColor="none none #3F4F66 none" class="intake-form-label test-subject-id">
       <Label text="{{ testSubjectId }}" />
     </Border>
+
+    <!-- GENDER INPUT -->
     <StackLayout class="gender-input">
       <Label text="gender" class="intake-form-label" />
       <FlexboxLayout flexDirection="row" justifyContent="space-between" class="radio-buttons">
@@ -11,6 +15,26 @@
         <Button class="{{ 'radio-buttons__button' + (gender == 'F' ? ' selected' : '') }}" text="F" tap="{{ selectGender }}" ></Button>
         <Button class="{{ 'radio-buttons__button' + (gender == 'O' ? ' selected' : '') }}" text="O" tap="{{ selectGender }}"></Button>
       </FlexboxLayout>
+    </StackLayout>
+    
+    <!-- LABEL INPUT -->
+    <StackLayout class="label-input">
+      <dd:DropDown items="{{ labels }}" selectedIndex="{{ selectedIndex }}"/>
+    </StackLayout>
+
+    <!-- ATTEMPTS INPUT -->
+    <StackLayout class="attempts-input">
+      <Label text="# of attemps" class="intake-form-label" />
+      <FlexboxLayout flexDirection="row" justifyContent="space-between" class="radio-buttons">
+        <Button class="{{ 'radio-buttons__button' + (numAttempts == '10' ? ' selected' : '') }}" text="10" tap="{{ selectAttempts }}"></Button>
+        <Button class="{{ 'radio-buttons__button' + (numAttempts == '30' ? ' selected' : '') }}" text="30" tap="{{ selectAttempts }}" ></Button>
+        <Button class="{{ 'radio-buttons__button' + (numAttempts == '50' ? ' selected' : '') }}" text="50" tap="{{ selectAttempts }}"></Button>
+      </FlexboxLayout>
+    </StackLayout>
+
+    <!-- START -->
+    <StackLayout class="start-input">
+      <Button text="START" class="big-button" tap="{{ onStart }}"></Button>
     </StackLayout>
   </StackLayout>
 </Page>
